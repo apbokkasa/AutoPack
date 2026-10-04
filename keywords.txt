@@ -1,0 +1,23 @@
+#######################################
+# Syntax Coloring Map For AutoPack
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+AutoPackClass	KEYWORD1
+
+#######################################
+# Pre-instantiated Objects (KEYWORD2)
+#######################################
+AutoPack	KEYWORD2
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+delimit	KEYWORD2
+parseInt	KEYWORD2
+parseFloat	KEYWORD2
+parseByte	KEYWORD2
+parseChar	KEYWORD2
+parseString	KEYWORD2

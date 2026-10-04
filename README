@@ -1,0 +1,36 @@
+AutoPack - Dynamic Array Unpacker for Arduino
+
+AutoPack is a zero-leak string parser designed for SRAM-constrained microcontrollers. It extracts delimited text payloads directly into native C-style arrays without using heavy secondary buffers or causing heap fragmentation.
+
+INSTALLATION
+
+Place the AutoPack folder into your global Arduino libraries directory.
+
+Include the library in your sketch: #include <AutoPack.h>
+
+
+HOW IT WORKS
+
+AutoPack tokenizes strings in-place. You provide a delimited character array, a destination array, and the maximum capacity. AutoPack converts the data and fills your array instantly.
+
+
+API REFERENCE
+
+1.AutoPack.delimit(std::initializer_list delimiters)
+Sets the characters used to split the string.
+Example: AutoPack.delimit({',', ' '});
+
+2.uint8_t AutoPack.parseInt(char* msg, int* arr, uint8_t capacity)
+Unpacks delimited numbers into an integer array. Returns the number of items successfully parsed.
+
+3.uint8_t AutoPack.parseFloat(char* msg, float* arr, uint8_t capacity)
+Unpacks delimited decimal numbers into a floating-point array.
+
+4.uint8_t AutoPack.parseByte(char* msg, uint8_t* arr, uint8_t capacity)
+Unpacks numbers into an 8-bit unsigned integer array (0-255). Ideal for saving SRAM.
+
+5.uint8_t AutoPack.parseChar(char* msg, char* arr, uint8_t capacity)
+Unpacks single characters into a char array.
+
+6.uint8_t AutoPack.parseString(char* msg, String* arr, uint8_t capacity)
+Unpacks text segments into an array of Arduino String objects.
